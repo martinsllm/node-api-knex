@@ -5,6 +5,13 @@ app.use(express.json());
 
 app.use(require('./routes'));
 
+//not found
+app.use((req, res, next) => {
+    const error = new Error('Not Found!');
+    error.status = 404;
+    next(error);
+});
+
 //catch all
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
