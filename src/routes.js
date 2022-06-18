@@ -1,9 +1,14 @@
 const router = require('express').Router();
 const UserController = require('./controllers/UserController');
+const ProjectController = require('./controllers/ProjectController');
 
-router.get('/users', UserController.List);
-router.post('/users', UserController.Create);
-router.put('/users/:id', UserController.Update);
-router.delete('/users/:id', UserController.Delete);
+router
+    //Users
+    .get('/users', UserController.List)
+    .post('/users', UserController.Create)
+    .put('/users/:id', UserController.Update)
+    .delete('/users/:id', UserController.Delete)
+    //Projects
+    .get('/projects', ProjectController.List)
 
 module.exports = router;

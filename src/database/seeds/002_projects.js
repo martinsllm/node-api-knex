@@ -5,7 +5,7 @@ exports.seed = async function(knex) {
     await knex('projects').insert([
     { 
         title: 'new project',
-        user_id: 1
+        user_id: 4
     },
      
     ]);
